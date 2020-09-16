@@ -1,0 +1,144 @@
+$dark-grayish-blue: hsl(217, 19%, 35%);
+$desaturated-dark-blue: hsl(214, 17%, 51%);
+$grayish-blue: hsl(212, 23%, 69%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  background-color: $light-grayish-blue;
+}
+
+.container {
+  height: 100vh;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  &__image {
+    width: 280px;
+    height: 280px;
+    object-position: left;
+    object-fit: cover;
+  }
+
+  &__info {
+    padding: 0.8rem 2rem;
+    position: relative;
+    &__title {
+      font-size: 18px;
+      color: $dark-grayish-blue;
+      margin-bottom: 1rem;
+    }
+    &__overview {
+      font-weight: 500;
+      font-size: 13px;
+      color: $desaturated-dark-blue;
+    }
+  }
+
+  &__author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+
+    &__info {
+      display: flex;
+      align-items: center;
+      height: 40px;
+
+      &__cred {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+      }
+      &__image {
+        margin-right: 0.8rem;
+        display: flex;
+        justify-content: center;
+      }
+      img {
+        width: 40px;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+
+    &__name {
+      color: $dark-grayish-blue;
+      font-weight: 700;
+    }
+    &__date {
+      color: $grayish-blue;
+      font-weight: 500;
+    }
+    &__share {
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $desaturated-dark-blue;
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      &__popup {
+        & *:not(:last-child) {
+          margin-right: 0.6rem;
+        }
+        position: absolute;
+        // top: -5rem;
+        // z-index: 8;
+        // overflow: auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1rem 2rem;
+        color: white;
+        background-color: $dark-grayish-blue;
+        border-radius: 0.5rem;
+        box-shadow: 0rem 0.3rem 0.5rem 0.1rem rgba($dark-grayish-blue, 0.3);
+        span {
+          color: $grayish-blue;
+          font-size: 12px;
+          font-weight: 500;
+          letter-spacing: 0.4rem;
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
